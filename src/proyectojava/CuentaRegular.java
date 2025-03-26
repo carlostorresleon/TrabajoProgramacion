@@ -12,54 +12,49 @@ import java.util.ArrayList;
  */
 public class CuentaRegular extends Cuenta {
     
-    private int años;
-    private float deuda;
-
-    public CuentaRegular(int años, float deuda, String nombreCuenta, float balance, float interes, ArrayList<Object> prestamos) {
+    //Constructor de la clase CuentaRegular
+    public CuentaRegular(String nombreCuenta, float balance, float interes, ArrayList<Object> prestamos) {
         
         super(nombreCuenta, balance, interes, prestamos);
-        this.años = años;
-        this.deuda = deuda;
     }
     
-    public CuentaRegular(){
-        
-        super();
-    }
-
+    public CuentaRegular(){}
+    
+    //Metodos get y set de la clase CuentaRegular
     public int getAños() {
         return años;
     }
-
+    
     public void setAños(int años) {
         this.años = años;
     }
-
+    
     public float getDeuda() {
         return deuda;
     }
-
+    
     public void setDeuda(float deuda) {
         this.deuda = deuda;
     }
     
+    //Metodo que aplica una tasa de interes al balance de una cuenta
     @Override
-    public void aplicarTasaIntereses() {
+    public void aplicarTasaIntereses(){
     
         super.aplicarTasaIntereses();
     }
-
+    
+    //Metodo que impide al cliente pedir otro prestamo si ya tienes uno pendiente de devolver
     @Override
-    public void pedirPrestamo() {
+    public void pedirPrestamo(){
      
         super.pedirPrestamo();
     }
-
+    
+    //Metodo para mostrar los datos de la clase CuentaRegular
     @Override
-    public String toString() {
+    public String toString(){
         
-        return super.toString() + "\n"
-                + "Años: " + getAños() + "\n"
-                + "Deuda: " + getDeuda();
+        return super.toString();
     }
 }

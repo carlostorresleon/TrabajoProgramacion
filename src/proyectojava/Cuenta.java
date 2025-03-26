@@ -93,7 +93,7 @@ public abstract class Cuenta {
         this.balance *= interes;
     }
     
-    //Metodo que impide el pedir otro prestamo si ya tienes uno pendiente de devolver
+    //Metodo que impide al cliente pedir otro prestamo si ya tienes uno pendiente de devolver
     public void pedirPrestamo(){
         
         if (!objetivoPrestamo) {
@@ -107,6 +107,7 @@ public abstract class Cuenta {
         }
     }
     
+    //Metodo para mostrar los datos de la cuenta
     @Override
     public String toString() {
         

@@ -88,6 +88,7 @@ public class Cliente {
         cuentas.add(cuenta);
     }
     
+    //Metodo para mostrar los datos del cliente
     @Override
     public String toString(){
         
