@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyectojava;
 
 import java.util.ArrayList;
@@ -85,13 +81,21 @@ public class Cliente {
     //Metodo para agregar un objeto Cuenta a la clase Cliente
     public void agregarCuenta(Cuenta cuenta){
         
-        cuentas.add(cuenta);
+        try{
+            
+            cuentas.add(cuenta);
+            System.out.println("Se ha agregado la cuenta con exito.");
+            
+        } catch (Exception e){
+            
+            System.out.println("Error al añadir la cuenta.");
+        }
+        
     }
     
     //Metodo para mostrar los datos del cliente
     @Override
     public String toString(){
-        
         return (
                 "Nombre: " + getNombre()
                 + "Edad: " + getEdad()

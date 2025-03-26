@@ -38,39 +38,39 @@ public abstract class Cuenta {
     public String getNombreCuenta() {
         return nombreCuenta;
     }
-
+    
     public void setNombreCuenta(String nombreCuenta) {
         this.nombreCuenta = nombreCuenta;
     }
-
+    
     public float getBalance() {
         return balance;
     }
-
+    
     public void setBalance(float balance) {
         this.balance = balance;
     }
-
+    
     public float getInteres() {
         return interes;
     }
-
+    
     public void setInteres(float interes) {
         this.interes = interes;
     }
-
+    
     public boolean isObjetivoPrestamo() {
         return objetivoPrestamo;
     }
-
+    
     public void setObjetivoPrestamo(boolean objetivoPrestamo) {
         this.objetivoPrestamo = objetivoPrestamo;
     }
-
+    
     public ArrayList<Prestamo> getPrestamos() {
         return prestamos;
     }
-
+    
     public void setPrestamos(ArrayList<Prestamo> prestamos) {
         this.prestamos = prestamos;
     }
@@ -78,13 +78,35 @@ public abstract class Cuenta {
     //Metodo para depositar una cantidad al balance de una cuenta
     public void depositar(float cantidad){
         
-        this.balance += cantidad;
+        try{
+            
+            this.balance += cantidad;
+            
+        } catch (Exception e){
+            
+            System.out.println("Error al depositar dinero en la cuenta.");
+        }
     }
     
     //Metodo para retirar una cantidad al balance de una cuenta
     public void retirar(float cantidad){
         
-        this.balance += cantidad;
+        try{
+            
+            if ((getBalance() - cantidad) < 0) {
+                
+                System.out.println("No dispone del balance suficiente para realizar esta operacion.");
+            }
+            
+            else{
+                
+                this.balance -= cantidad;
+            }
+            
+        } catch (Exception e){
+            
+            System.out.println("Error al retirar dinero de la cuenta.");
+        }
     }
     
     //Metodo que aplica una tasa de interes al balance de una cuenta
