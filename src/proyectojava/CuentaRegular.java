@@ -26,6 +26,22 @@ public class CuentaRegular extends Cuenta {
         
         super();
     }
+
+    public int getAños() {
+        return años;
+    }
+
+    public void setAños(int años) {
+        this.años = años;
+    }
+
+    public float getDeuda() {
+        return deuda;
+    }
+
+    public void setDeuda(float deuda) {
+        this.deuda = deuda;
+    }
     
     @Override
     public void aplicarTasaIntereses() {
@@ -43,7 +59,7 @@ public class CuentaRegular extends Cuenta {
     public String toString() {
         
         return super.toString() + "\n"
-                + "Años: " 
-                + "Deuda: ";
+                + "Años: " + getAños() + "\n"
+                + "Deuda: " + getDeuda();
     }
 }
