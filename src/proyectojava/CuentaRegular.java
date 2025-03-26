@@ -20,23 +20,6 @@ public class CuentaRegular extends Cuenta {
     
     public CuentaRegular(){}
     
-    //Metodos get y set de la clase CuentaRegular
-    public int getAños() {
-        return años;
-    }
-    
-    public void setAños(int años) {
-        this.años = años;
-    }
-    
-    public float getDeuda() {
-        return deuda;
-    }
-    
-    public void setDeuda(float deuda) {
-        this.deuda = deuda;
-    }
-    
     //Metodo que aplica una tasa de interes al balance de una cuenta
     @Override
     public void aplicarTasaIntereses(){

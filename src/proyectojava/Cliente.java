@@ -18,12 +18,12 @@ public class Cliente {
     private Deuda deuda;
     
     //Constructor de la clase Cliente
-    public Cliente(String nombre, String contraseña, int edad, String estadoCivil, ArrayList<Cuenta> cuentas, Deuda deuda) {
+    public Cliente(String nombre, String contraseña, int edad, String estadoCivil, Deuda deuda) {
         this.nombre = nombre;
         this.contraseña = contraseña;
         this.edad = edad;
         this.estadoCivil = estadoCivil;
-        this.cuentas = cuentas;
+        this.cuentas = new ArrayList<>();
         this.deuda = deuda;
     }
     
@@ -64,10 +64,6 @@ public class Cliente {
     
     public ArrayList<Cuenta> getCuentas() {
         return cuentas;
-    }
-    
-    public void setCuentas(ArrayList<Cuenta> cuentas) {
-        this.cuentas = cuentas;
     }
     
     public Deuda getDeuda() {
