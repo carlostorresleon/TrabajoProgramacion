@@ -84,11 +84,14 @@ public class Cliente {
     //Metodo para mostrar los datos del cliente
     @Override
     public String toString(){
+        
+        String cuentaStr = (getCuenta() != null) ? getCuenta().toString() : "Sin cuenta";
+        
         return (
                 "Nombre: " + getNombre() + "\n"
                 + "Edad: " + getEdad() + "\n"
                 + "Estado civil: " + getEstadoCivil() + "\n"
-                + "Cuenta:"  + "\n" + getCuenta().toString()
+                + "Cuenta:"  + "\n" + cuentaStr
         );
     }
 }

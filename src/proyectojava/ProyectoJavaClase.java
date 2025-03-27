@@ -109,6 +109,8 @@ public class ProyectoJavaClase {
                 System.out.println("Error en el estado civil.");
             }
         } while (!valido);
+        
+        System.out.println(c.toString());
     }
     
     private static void menuLogin(){
@@ -149,5 +151,7 @@ public class ProyectoJavaClase {
         banco.guardarCliente(cliente);
         */
         añadirCliente(cliente);
+        
+        System.out.println(cliente.toString());
     }
 }
