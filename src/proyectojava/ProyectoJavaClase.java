@@ -5,7 +5,6 @@
 package proyectojava;
 
 import java.util.Scanner;
-import java.lang.Exception;
 
 /**
  *
@@ -21,62 +20,93 @@ public class ProyectoJavaClase {
         int edad;
         boolean valido = false;
         
+        //validar nombre
         do {
             try {
                 
-                System.out.print("Introduzca el nombre del cliente (Sin espacios): ");
+                System.out.print("Introduzca el nombre (Sin espacios): ");
                 nombre = e.nextLine();
                 
                 if (nombre.contains(" ")) {
                     
                     valido = false;
-                    throw new Exception();
+                    throw new Exception("El nombre contiene un espacio.");
                 }
                 
-                else{
-                    
-                    valido = true;
-                }
+                c.setNombre(nombre);
+                valido = true;
                 
             } catch (Exception error) {
                 
-                System.out.println("error");
+                System.out.println(error.getMessage());
             }
         } while (!valido);
         
+        //validar contraseña
         do {
             try {
                 
-                System.out.print("Introduzca la contraseña del cliente (Sin espacios): ");
+                System.out.print("Introduzca la contraseña (Sin espacios): ");
                 contraseña = e.nextLine();
+                
+                if (contraseña.contains(" ")) {
+                    
+                    valido = false;
+                    throw new Exception("La contraseña contiene un espacio.");
+                }
+                
+                c.setContraseña(contraseña);
+                valido = true;
                 
             } catch (Exception error) {
                 
-                System.out.println("error");
+                System.out.println(error.getMessage());
             }
+            
         } while (!valido);
         
+        //validar edad
         do {
             try {
                 
                 System.out.print("Introduzca la edad del cliente: ");
                 edad = e.nextInt();
+                e.nextLine();
+                
+                if (edad <= 0 || edad >=120) {
+                    
+                    valido = false;
+                    throw new Exception("Edad incorrecta.");
+                }
+                
+                else if(edad<18){
+                    
+                    valido = false;
+                    throw new Exception("Los clientes deben ser mayores de edad para poder registrarse.");
+                }
+                
+                c.setEdad(edad);
+                valido = true;
                 
             } catch (Exception error) {
                 
-                System.out.println("error");
+                System.out.println(error.getMessage());
             }
         } while (!valido);
         
+        //validar estado civil
         do {
             try {
                 
                 System.out.print("Introduzca el estado civil del cliente: ");
                 estado_civil = e.nextLine().replace(" ", ".");
                 
+                c.setEstadoCivil(estado_civil);
+                valido = true;
+                
             } catch (Exception error) {
                 
-                System.out.println("error");
+                System.out.println("Error en el estado civil.");
             }
         } while (!valido);
     }
