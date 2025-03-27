@@ -37,7 +37,7 @@ public class GestorArchivo {
     public void crearLog(){
         if(!confirmacion()){
             try{
-                Path ruta = Files.createDirectories(login).resolve("log.txt");
+                Path ruta = Files.createDirectories(login).resolve("clientes.txt");
                 Files.createFile(ruta);
             }catch(IOException e){System.out.println("Error: "+e);}
         }else{System.out.println("Ya existe un archivo creado en esa ruta");}    

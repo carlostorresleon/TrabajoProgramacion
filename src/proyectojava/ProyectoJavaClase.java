@@ -4,13 +4,85 @@
  */
 package proyectojava;
 
+import java.util.Scanner;
+import java.lang.Exception;
+
 /**
  *
  * @author Usuario
  */
 public class ProyectoJavaClase {
     
+    private static void añadirCliente(Cliente c){
+        
+        Scanner e = new Scanner(System.in);
+        
+        String nombre, contraseña, estado_civil;
+        int edad;
+        boolean valido = false;
+        
+        do {
+            try {
+                
+                System.out.print("Introduzca el nombre del cliente (Sin espacios): ");
+                nombre = e.nextLine();
+                
+                if (nombre.contains(" ")) {
+                    
+                    valido = false;
+                    throw new Exception();
+                }
+                
+                else{
+                    
+                    valido = true;
+                }
+                
+            } catch (Exception error) {
+                
+                System.out.println("error");
+            }
+        } while (!valido);
+        
+        do {
+            try {
+                
+                System.out.print("Introduzca la contraseña del cliente (Sin espacios): ");
+                contraseña = e.nextLine();
+                
+            } catch (Exception error) {
+                
+                System.out.println("error");
+            }
+        } while (!valido);
+        
+        do {
+            try {
+                
+                System.out.print("Introduzca la edad del cliente: ");
+                edad = e.nextInt();
+                
+            } catch (Exception error) {
+                
+                System.out.println("error");
+            }
+        } while (!valido);
+        
+        do {
+            try {
+                
+                System.out.print("Introduzca el estado civil del cliente: ");
+                estado_civil = e.nextLine().replace(" ", ".");
+                
+            } catch (Exception error) {
+                
+                System.out.println("error");
+            }
+        } while (!valido);
+    }
+    
     private static void menuLogin(){
+        
         System.out.println("        +-------------+");
         System.out.println("        | LOGIN BANCO |");
         System.out.println("        +-------------+");
@@ -20,36 +92,32 @@ public class ProyectoJavaClase {
         System.out.println("");
         System.out.print("Seleccione una opcion: ");
     }
-    /**
-     * @param args the command line arguments
-     */
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
         
+        Scanner e = new Scanner(System.in);
+        
         Cuenta cuentaR = new Cuenta("Cuenta 1", 0, 10, null);
-        Cliente cliente = new Cliente("Nombre 1", "1234", 15, "Soltero", cuentaR, new Deuda(0, false));
+        Cliente cliente = new Cliente();
+        Banco banco = new Banco();
+        GestorArchivo gestor = new GestorArchivo();
         
-        //Cliente
-        System.out.println(cliente.toString());
+        String usuario, contraseña;
+        /*
+        gestor.crearLog();
+        banco.cargarClientes();
         
-        //Cuenta
-        System.out.println("BALANCE INICIAL: "+cuentaR.getBalance());
+        System.out.print("Introduzca el usuario: ");
+        usuario = e.nextLine();
+        System.out.print("Introduzca la contraseña: ");
+        contraseña = e.nextLine();
         
-        cuentaR.depositar(150);
-        System.out.println("BALANCE DESPUES DE DEPOSITAR: "+cuentaR.getBalance());
+        banco.loginBanco(usuario, contraseña);
         
-        cuentaR.aplicarTasaIntereses();
-        System.out.println("BALANCE AL APLICAR INTERESES: "+cuentaR.getBalance());
-        
-        cuentaR.retirar(135);
-        System.out.println("BALANCE AL RETIRAR DINERO (DISPONE DE LA CANTIDAD): "+cuentaR.getBalance());
-        
-        cuentaR.retirar(15);
-        System.out.println("BALANCE AL RETIRAR DINERO (NO DISPONE DE LA CANTIDAD: )"+cuentaR.getBalance());
-        
-        cuentaR.pedirPrestamo();
-        
-        System.out.println(cliente.toString());
+        banco.guardarCliente(cliente);
+        */
+        añadirCliente(cliente);
     }
-    
 }

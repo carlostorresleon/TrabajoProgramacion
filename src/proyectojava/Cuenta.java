@@ -10,6 +10,8 @@ package proyectojava;
  */
 import java.util.ArrayList;
 
+//Clase Cuenta que contiene el balance, el tipo de interes y si tiene un prestamo pendiente.
+//1 Cuenta por Cliente
 public class Cuenta {
     
     //Declaracion de atributos de la clase Cuenta
@@ -36,10 +38,11 @@ public class Cuenta {
     
     //Metodos get y set de la clase Cuenta
     public String getNombreCuenta(){
+        
         return nombreCuenta;
     }
     
-    public void setNombreCuenta(String nombreCuenta) {
+    public void setNombreCuenta(String nombreCuenta){
         this.nombreCuenta = nombreCuenta;
     }
     
