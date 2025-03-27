@@ -33,14 +33,20 @@ public class ProyectoJavaClase {
         
         //Cuenta
         System.out.println("BALANCE INICIAL: "+cuentaR.getBalance());
+        
         cuentaR.depositar(150);
         System.out.println("BALANCE DESPUES DE DEPOSITAR: "+cuentaR.getBalance());
+        
         cuentaR.aplicarTasaIntereses();
         System.out.println("BALANCE AL APLICAR INTERESES: "+cuentaR.getBalance());
+        
         cuentaR.retirar(135);
         System.out.println("BALANCE AL RETIRAR DINERO (DISPONE DE LA CANTIDAD): "+cuentaR.getBalance());
+        
         cuentaR.retirar(15);
         System.out.println("BALANCE AL RETIRAR DINERO (NO DISPONE DE LA CANTIDAD: )"+cuentaR.getBalance());
+        
+        cuentaR.pedirPrestamo();
     }
     
 }
