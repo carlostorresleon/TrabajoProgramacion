@@ -10,7 +10,7 @@ package proyectojava;
  */
 import java.util.ArrayList;
 
-public abstract class Cuenta {
+public class Cuenta {
     
     //Declaracion de atributos de la clase Cuenta
     private String nombreCuenta;
@@ -120,6 +120,8 @@ public abstract class Cuenta {
         
         if (!objetivoPrestamo) {
             
+            System.out.print("Introduzca la cantidad del prestamo ("+ getInteres() +"% de intereses): ");
+            //TERMINAR
             this.objetivoPrestamo = true;
         }
         

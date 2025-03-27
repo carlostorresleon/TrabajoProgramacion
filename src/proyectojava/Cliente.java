@@ -10,6 +10,7 @@ package proyectojava;
  * @author Usuario
  */
 public class Cliente {
+    
     //Declaracion de atributos de la clase Cliente
     private String nombre;
     private String contraseña;

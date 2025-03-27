@@ -60,7 +60,7 @@ public class Banco {
                     String nombreCuenta = partes[6];
                     float balance = Float.parseFloat(partes[7]);
                     float interes = Float.parseFloat(partes[8]);
-                    Cuenta cuenta = new CuentaRegular(nombreCuenta, balance, interes,new ArrayList<>());
+                    Cuenta cuenta = new Cuenta(nombreCuenta, balance, interes,new ArrayList<>());
 
                     Cliente cliente = new Cliente(nombre, contraseña, edad, estadoCivil, cuenta, deuda);
                     listaClientes.put(nombre, cliente);

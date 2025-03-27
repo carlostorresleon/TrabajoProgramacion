@@ -11,13 +11,14 @@ package proyectojava;
 public class ProyectoJavaClase {
     
     private static void menuLogin(){
-        System.out.println("+-------------+");
-        System.out.println("| LOGIN BANCO |");
-        System.out.println("+-------------+");
-        System.out.println("\n1.");
+        System.out.println("        +-------------+");
+        System.out.println("        | LOGIN BANCO |");
+        System.out.println("        +-------------+");
         System.out.println("");
+        System.out.println("1. Crear cuenta");
+        System.out.println("2. Iniciar sesion");
         System.out.println("");
-        System.out.println("");
+        System.out.print("Seleccione una opcion: ");
     }
     /**
      * @param args the command line arguments
@@ -25,7 +26,7 @@ public class ProyectoJavaClase {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Cuenta cuentaR = new CuentaRegular("Cuenta 1", 0, 10, null);
+        Cuenta cuentaR = new Cuenta("Cuenta 1", 0, 10, null);
         Cliente cliente = new Cliente("Nombre 1", "1234", 15, "Soltero", cuentaR, new Deuda(0, false));
         
         //Cliente
@@ -47,6 +48,8 @@ public class ProyectoJavaClase {
         System.out.println("BALANCE AL RETIRAR DINERO (NO DISPONE DE LA CANTIDAD: )"+cuentaR.getBalance());
         
         cuentaR.pedirPrestamo();
+        
+        System.out.println(cliente.toString());
     }
     
 }
