@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class CuentaRegular extends Cuenta {
     
     //Constructor de la clase CuentaRegular
-    public CuentaRegular(String nombreCuenta, float balance, float interes, ArrayList<Object> prestamos) {
+    public CuentaRegular(String nombreCuenta, float balance, float interes, ArrayList<Prestamo> prestamos) {
         
         super(nombreCuenta, balance, interes, prestamos);
     }
@@ -23,14 +23,14 @@ public class CuentaRegular extends Cuenta {
     //Metodo que aplica una tasa de interes al balance de una cuenta
     @Override
     public void aplicarTasaIntereses(){
-    
+        
         super.aplicarTasaIntereses();
     }
     
     //Metodo que impide al cliente pedir otro prestamo si ya tienes uno pendiente de devolver
     @Override
     public void pedirPrestamo(){
-     
+        
         super.pedirPrestamo();
     }
     
@@ -41,3 +41,5 @@ public class CuentaRegular extends Cuenta {
         return super.toString();
     }
 }
+
+

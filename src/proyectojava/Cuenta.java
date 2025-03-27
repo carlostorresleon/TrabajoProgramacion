@@ -1,15 +1,15 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package proyectojava;
 
-import java.util.ArrayList;
-
 /**
  *
- * @author yaliora113
+ * @author Usuario
  */
+import java.util.ArrayList;
+
 public abstract class Cuenta {
     
     //Declaracion de atributos de la clase Cuenta
@@ -35,7 +35,7 @@ public abstract class Cuenta {
     }
     
     //Metodos get y set de la clase Cuenta
-    public String getNombreCuenta() {
+    public String getNombreCuenta(){
         return nombreCuenta;
     }
     
@@ -112,7 +112,7 @@ public abstract class Cuenta {
     //Metodo que aplica una tasa de interes al balance de una cuenta
     public void aplicarTasaIntereses(){
         
-        this.balance *= interes;
+        setBalance((getBalance() - (getBalance()*interes)/100));
     }
     
     //Metodo que impide al cliente pedir otro prestamo si ya tienes uno pendiente de devolver
@@ -140,5 +140,5 @@ public abstract class Cuenta {
                 + "Prestamo pendiente: " + isObjetivoPrestamo() + "\n"
                 + "Lista de prestamos: " + getPrestamos()
         );
-    }
+    }  
 }

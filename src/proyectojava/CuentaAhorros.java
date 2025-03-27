@@ -10,12 +10,12 @@ import java.util.ArrayList;
  *
  * @author yaliora113
  */
-public class CuentaAhorros extends CuentaRegular {
+public class CuentaAhorros extends Cuenta {
     
     private int años;
     private float deuda;
     
-    public CuentaAhorros(float deuda, int años, String nombreCuenta, float balance, float interes, ArrayList<Object> prestamos) {
+    public CuentaAhorros(float deuda, int años, String nombreCuenta, float balance, float interes, ArrayList<Prestamo> prestamos) {
         super(nombreCuenta, balance, interes, prestamos);
         this.años = años;
         this.deuda = deuda;

@@ -4,11 +4,12 @@
  */
 package proyectojava;
 
+
 /**
  *
  * @author yaliora113
  */
-public class CuentaNegocios extends CuentaRegular {
+public class CuentaNegocios extends Cuenta {
     
     
 }
